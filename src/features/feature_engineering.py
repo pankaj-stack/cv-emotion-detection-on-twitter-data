@@ -56,7 +56,7 @@ def load_data(file_path: str) -> pd.DataFrame:
 def apply_tfidf(train_data: pd.DataFrame, test_data: pd.DataFrame, max_features: int) -> tuple:
     """Apply TfIdf to the data."""
     try:
-        vectorizer = TfidfVectorizer(max_features=max_features)
+        vectorizer = TfidfVectorizer(max_features=max_features, stop_words="english")
 
         X_train = train_data['content'].values
         y_train = train_data['sentiment'].values
